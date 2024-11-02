@@ -98,6 +98,12 @@ This will start the Open WebUI server, which you can access at [http://localhost
   docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
   ```
 
+- **If Ollama is on your computer** and you want to disable login (for single-user setup), use this command:
+
+  ```bash
+  docker run -d -p 3000:8080 -e WEBUI_AUTH=False --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+  ```
+
 - **If Ollama is on a Different Server**, use this command:
 
   To connect to Ollama on another server, change the `OLLAMA_BASE_URL` to the server's URL:
